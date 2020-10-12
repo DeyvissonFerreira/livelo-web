@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import funcionalidades.addCarrinho.model.Produto;
@@ -22,6 +23,13 @@ public class HelpAdicionarCarrinho extends Suporte{
 
 	public void aguardaTelaInicial() {
 		aguardaElemento(ExpectedConditions.visibilityOf(pg.CMP_BUSCA));
+		aguardaElemento(ExpectedConditions.attributeContains(pg.NEED_HELP, "style", "display: none;"));
+		
+		try {
+			pg.COOKIES.click();
+		} catch (NoSuchElementException e) {
+			System.out.println("\n Cookies Aceitos!");
+		}
 	}
 	
 	public void preencherBusca(String valor) {

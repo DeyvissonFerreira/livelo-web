@@ -16,6 +16,9 @@ public class PgoAdicionarCarrinho {
 
 	@FindBy(id = "livelo-spinner")
 	public WebElement LOADER;
+
+	@FindBy(id = "btn-authorizeCoookies")
+	public WebElement COOKIES;
 	
 	/**
 	 * Lista de Campos.

@@ -10,10 +10,16 @@ import cucumber.api.testng.CucumberFeatureWrapper;
 import cucumber.api.testng.TestNGCucumberRunner;
 import setup.Capabilities;
 
-@CucumberOptions(features = "src/test/resources/features", glue = { "stepdefs" }, tags = { "~@Ignore" }, format = {
-		"pretty", "html:target/cucumber-reports/cucumber-pretty",
-		"json:target/cucumber-reports/json-reports/CucumberTestReport.json",
-		"rerun:target/cucumber-reports/rerun-reports/rerun.txt" })
+@CucumberOptions(
+		features = "src/test/resources/features", 
+		glue = { "stepdefs" }, 
+		tags = { "~@Ignore" }, 
+		format = {
+				"pretty", 
+				"html:target/cucumber-reports/cucumber-pretty",
+				"json:target/cucumber-reports/json-reports/CucumberTestReport.json",
+				"rerun:target/cucumber-reports/rerun-reports/rerun.txt" 
+		})
 public class TestRunner extends Capabilities{
 
 	private TestNGCucumberRunner testNGCucumberRunner;

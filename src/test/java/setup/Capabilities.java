@@ -13,12 +13,9 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
-import io.github.sukgu.Shadow;
-
 public class Capabilities {
 	private static ThreadLocal<WebDriver> driver = new ThreadLocal<WebDriver>();
 	private static WebDriverWait wait;
-	public static Shadow shadow;
 
 	/**
 	 * Metodo para retornar o driver conforme o browser informado na suite
@@ -54,10 +51,7 @@ public class Capabilities {
 			}
 		}
 
-		wait = new WebDriverWait(driver.get(), 45);
-		shadow = new Shadow(getDriver());
-		shadow.setImplicitWait(15);
-		
+		wait = new WebDriverWait(driver.get(), 30);
 	}
 	
 	/**
