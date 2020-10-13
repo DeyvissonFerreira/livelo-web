@@ -16,4 +16,4 @@ Feature: Adicionar Produto ao Carrinho
    Examples:
    | produtoPesquisa                                                      | produtoValidacao |
    | Poltrona Nalin Milla Costurada Com Pe de Aluminio 259A - Prata/Cinza | Poltrona Nalin Milla Costurada |
-   | Cortina para Sala Vizapi Palm Springs Homes 140x240cm - 1 Peça       | Cortina para Sala Vizapi Palm Springs Homes 140x240cm |
+   | Sapateira Demóbile Moscow com Espelho para 20 Pares - Branca | Moscow com Espelho para 20 Pares - Branca |
