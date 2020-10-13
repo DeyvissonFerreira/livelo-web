@@ -1,8 +1,8 @@
-# Projeto Desafio Técnico Automação Site Livelo #
+# Projeto Desafio TÃ©cnico AutomaÃ§Ã£o Site Livelo #
 
-### Construção e Execução dos Testes
+### ConstruÃ§Ã£o e ExecuÃ§Ã£o dos Testes
 
- - Através dos comandos "mvn clean install" utilizando um terminal na pasta raiz do projeto
+ - AtravÃ©s dos comandos "mvn clean install" utilizando um terminal na pasta raiz do projeto
 
 ### Ferramentas Utilizadas
 
@@ -12,7 +12,6 @@
 - cucumber-reporting 3.8.0
 - Selenium-java 3.141.59
 - testng 6.9.8
-- io.github.sukgu (Shadow-root) 0.0.13
 - maven-compiler-plugin 3.1
 - maven-resources-plugin 2.4
 - maven-surefire-plugin 2.14.1
