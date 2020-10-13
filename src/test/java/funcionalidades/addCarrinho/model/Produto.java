@@ -1,5 +1,7 @@
 package funcionalidades.addCarrinho.model;
 
+import java.util.Locale;
+
 public class Produto {
 	
 	public String nomeProduto, pontosProduto, parceiroProduto;
@@ -12,12 +14,11 @@ public class Produto {
 		this.pontosProduto = pontosProduto;
 	}
 
-	public static int getMaxPoint() {
-		return maxPoint;
+	public static String getMaxPoint() {
+		return String.format(new Locale("pt"), "%,d", maxPoint).concat(" Pontos");
 	}
 
 	public static void setMaxPoint(int maxPoint) {
 		Produto.maxPoint += maxPoint;
 	}
-	
 }

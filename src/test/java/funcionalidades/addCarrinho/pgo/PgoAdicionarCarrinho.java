@@ -30,12 +30,6 @@ public class PgoAdicionarCarrinho {
 	@FindBy(css = ".cc-product-item.product-box")
 	public WebElement CMP_ITEM_PRODUTO;
 
-	@FindBy(css = "div.form.form--cupom label")
-	public WebElement CMP_CUMPOM_DESCONTO;
-
-	@FindBy(css = "#cc-cupom-field")
-	public WebElement CMP_INFORMAR_CUMPOM_DESCONTO;
-
 	/**
 	 * Lista de Botões.
 	 */
@@ -45,29 +39,11 @@ public class PgoAdicionarCarrinho {
 
 	@FindBy(css = "#CC-prodDetails-addToCart button")
 	public WebElement BTN_ADICIONAR_AO_CARRINHO;
-
-	@FindBy(css = "a[id^='remove']")
-	public WebElement BTN_REMOVER;
-
-	@FindBy(css = "span[id^='plus']")
-	public WebElement BTN_AUMENTAR_QUANTIDADE;
-	
-	@FindBy(css = "span[id^='minus']")
-	public WebElement BTN_DIMINUIR_QUANTIDADE;
-
-	@FindBy(css = "#cc-cupom-field + a")
-	public WebElement BTN_APLICAR;
-
-	@FindBy(css = "#btClose")
-	public WebElement BTN_FECHAR_MODAL;
 	
 	/**
 	 * Lista de Labels.
 	 */
 	
-	@FindBy(css = "#CC-cart-empty .container")
-	public WebElement LABEL_EMPTY;
-
 	@FindBy(css = "a[id^='name']")
 	public WebElement LABEL_NOME_CART;
 	
@@ -98,9 +74,6 @@ public class PgoAdicionarCarrinho {
 	@FindBy(css = "#CC-cart-list")
 	public WebElement TELA_CARRINHO_ITEM;
 
-	@FindBy(css = ".feedback__label")
-	public WebElement MSG_ALERTA;
-
 	/**
 	 * Dados Produto
 	 */
@@ -116,9 +89,6 @@ public class PgoAdicionarCarrinho {
 
 	@FindBy(css = "li[role='presentation'].active.partners-tab__nav-item")
 	public WebElement PARCEIRO_PRODUTO;
-	
-	@FindBy(css = "#slct-entertainment option")
-	public WebElement PERIODO;
 	
 	/**
 	 * Display

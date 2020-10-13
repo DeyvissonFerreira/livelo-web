@@ -84,5 +84,4 @@ public class Capabilities {
 	public static WebDriverWait getWait() {
 		return wait;
 	}
-
 }

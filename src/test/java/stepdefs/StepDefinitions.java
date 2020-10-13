@@ -30,47 +30,19 @@ public class StepDefinitions {
     	hp.preencherBusca(opcao);
     }
     
-    @And("^Informo um Cupom Invalido \"([^\"]*)\"$")
-    public void preencherCumpo(String valor) throws Throwable {
-    	hp.preencherCupomDesconto(valor);
-    }
-    
-    @And("^Clico na operacao \"([^\"]*)\"$")
-    public void acionarOperacao(String operacao) throws Throwable {
-    	if (operacao.equalsIgnoreCase("aumentar"))
-    		hp.acionarAumentarQuantidade();
-    	else
-    		hp.acionarDiminuirQuantidade();
-    }
-    
     @And("^Clico no botao Pesquisa$")
     public void acionarPesquisar() throws Throwable {
     	hp.acionarLupa();
-    }
-    
-    @And("^Clico no campo Cumpom de desconto$")
-    public void acionarCupomDesconto() throws Throwable {
-    	hp.acionarCupomDesconto();
     }
     
     @And("^Seleciono o Produto$")
     public void selecionarProduto() throws Throwable {
     	hp.selecionarProduto();
     }
-    
-    @And("^Clico no botao Remover$")
-    public void acionarRemover() throws Throwable {
-    	hp.acionarRemover();
-    }
-    
+
     @And("^Clico no botao Adicionar ao Carrinho$")
     public void acionarAdicionarCarrinho() throws Throwable {
     	hp.acionarAdicionarCarrinho();
-    }
-    
-    @And("^Clico no botao Aplicar$")
-    public void acionarAplicar() throws Throwable {
-    	hp.acionarAplicar();
     }
     
     @Then("^Valido a quantidade de pontos necessarios e o nome do Produto \"([^\"]*)\"$")
@@ -86,15 +58,5 @@ public class StepDefinitions {
     @Then("^Valido as alteracoes do produto$")
     public void validarAlteracaoQuantidadeCarrinho() throws Throwable {
     	hp.validarDadosProdutoCarrinho();
-    }
-    
-    @Then("^Valido a mensagem de excecao apresentada \"([^\"]*)\"$")
-    public void validarMensagem(String mensagem) throws Throwable {
-    	hp.validarMensagem(mensagem);
-    }
-    
-    @Then("^o Carrinho e esvaziado e valido a label apresentada \"([^\"]*)\"$")
-    public void validarEmptyState(String mensagem) throws Throwable {
-    	hp.validarEmptyState(mensagem);
     }
 }

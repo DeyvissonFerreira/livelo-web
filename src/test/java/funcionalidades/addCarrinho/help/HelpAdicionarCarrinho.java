@@ -1,6 +1,5 @@
 package funcionalidades.addCarrinho.help;
 
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,9 +20,13 @@ public class HelpAdicionarCarrinho extends Suporte{
 		pg = new PgoAdicionarCarrinho();
 	}
 
+	public void aguardarChatSumir() {
+		aguardaElemento(ExpectedConditions.attributeContains(pg.NEED_HELP, "style", "display: none;"));
+	}
+	
 	public void aguardaTelaInicial() {
 		aguardaElemento(ExpectedConditions.visibilityOf(pg.CMP_BUSCA));
-		aguardaElemento(ExpectedConditions.attributeContains(pg.NEED_HELP, "style", "display: none;"));
+		aguardarChatSumir();
 		
 		try {
 			pg.COOKIES.click();
@@ -40,37 +43,9 @@ public class HelpAdicionarCarrinho extends Suporte{
 		click(pg.BTN_LUPA);
 	}
 	
-	public void acionarAplicar() {
-		click(pg.BTN_APLICAR);
-	}
-	
-	public void acionarCupomDesconto() {
-		aguardaLoader();
-		aguardaElemento(ExpectedConditions.visibilityOfAllElements(pg.LISTA_ITEM_CART));
-		click(pg.BTN_APLICAR);
-	}
-	
-	public void preencherCupomDesconto(String cupom) {
-		preencheCampo(pg.CMP_INFORMAR_CUMPOM_DESCONTO, cupom);
-	}
-	
-	public void acionarAumentarQuantidade() {
-		click(pg.BTN_AUMENTAR_QUANTIDADE);
-		HelpAdicionarCarrinho.produto.get(0).quantidade += 1;
-	}
-	
-	public void acionarDiminuirQuantidade() {
-		click(pg.BTN_AUMENTAR_QUANTIDADE);
-		HelpAdicionarCarrinho.produto.get(0).quantidade -= 1;
-	}
-	
-	public void acionarRemover() {
-		click(pg.BTN_REMOVER);
-	}
-	
 	public void selecionarProduto() {
 		aguardaLoader();
-		aguardaElemento(ExpectedConditions.attributeContains(pg.NEED_HELP, "style", "display: none;"));
+		aguardarChatSumir();
 		aguardaElemento(ExpectedConditions.visibilityOf(pg.IMG_PRODUTO));
 		produto.add(new Produto(pg.NOME_PRODUTO.getText(), pg.PONTOS_PRODUTO.getText()));
 		click(pg.CMP_ITEM_PRODUTO);
@@ -102,19 +77,7 @@ public class HelpAdicionarCarrinho extends Suporte{
 			verificacao(i.findElement(By.cssSelector(obterSeletor(pg.LABEL_VALOR_TOTAL_ITEM_CART))), produto.pontosProduto);
 		});
 	
-		verificacao(pg.LABEL_PONTOS_TOTAL_CARRINHO, NumberFormat.getCurrencyInstance().format(Produto.getMaxPoint()).replace("R$ ", "").replace(",00", " Pontos"));
-	}
-	
-	
-	public void validarMensagem(String mensagem) {
-		click(pg.BTN_FECHAR_MODAL);
-		aguardaElemento(ExpectedConditions.visibilityOf(pg.MSG_ALERTA));
-		verificacao(pg.MSG_ALERTA, mensagem);
-	}
-	
-	public void validarEmptyState(String mensagem) {
-		aguardaElemento(ExpectedConditions.visibilityOf(pg.LABEL_EMPTY));
-		verificacao(pg.LABEL_EMPTY, mensagem);
+		verificacao(pg.LABEL_PONTOS_TOTAL_CARRINHO, Produto.getMaxPoint());
 	}
 	
 	private void obtemDadosAdicionaisProduto(Produto produto) {
